@@ -1,0 +1,7 @@
+{
+  "name": "Coupland Signs Rebuild",
+  "description": "A modern, conversion-optimized website for a family-owned sign shop in La Porte, TX, featuring product showcases, a filterable gallery, and expert guides.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}

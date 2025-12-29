@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="theme-color" content="#171717">
+  <title>Coupland Signs | Custom Signs & Vehicle Graphics in La Porte, TX</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <style>
+    /* Prevent blue highlight on tap */
+    * { -webkit-tap-highlight-color: transparent; }
+    
+    /* Smooth scrolling */
+    html { scroll-behavior: smooth; }
+
+    /* Custom scrollbar utility */
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    
+    /* Performance: Containment for fixed bars */
+    .fixed { contain: layout; }
+
+    [data-page] { display: none; }
+    [data-page].active { display: block; }
+
+    /* Custom Tailwind Config */
+    @layer base {
+      :root {
+        --brand-yellow: #FACC15;
+        --brand-black: #171717;
+        --brand-gray: #404040;
+      }
+    }
+  </style>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              yellow: '#FACC15',
+              black: '#171717',
+              gray: '#404040'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Oswald', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-white text-brand-black antialiased">
+
+  <!-- Header -->
+  <header class="sticky top-0 z-50 bg-brand-black/95 backdrop-blur-md shadow-lg border-b border-white/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16 md:h-20">
+        <a href="#home" class="flex items-center shrink-0">
+          <div class="bg-brand-yellow px-3 py-1.5 md:px-4 md:py-2 skew-x-[-12deg] shadow-md group overflow-hidden relative">
+            <span class="relative z-10 font-display text-lg md:text-2xl font-black text-brand-black tracking-tighter uppercase italic">
+              Coupland Signs
+            </span>
+            <div class="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
+          </div>
+        </a>
+
+        <!-- Desktop Nav -->
+        <nav class="hidden md:flex space-x-6 items-center">
+          <a href="#home" class="nav-link text-sm font-semibold uppercase tracking-wider text-gray-300 hover:text-white transition-colors duration-200" data-link="home">Home</a>
+          <a href="#products" class="nav-link text-sm font-semibold uppercase tracking-wider text-gray-300 hover:text-white transition-colors duration-200" data-link="products">Products</a>
+          <a href="#gallery" class="nav-link text-sm font-semibold uppercase tracking-wider text-gray-300 hover:text-white transition-colors duration-200" data-link="gallery">Gallery</a>
+          <a href="#guides" class="nav-link text-sm font-semibold uppercase tracking-wider text-gray-300 hover:text-white transition-colors duration-200" data-link="guides">Guides</a>
+          <a href="#about" class="nav-link text-sm font-semibold uppercase tracking-wider text-gray-300 hover:text-white transition-colors duration-200" data-link="about">About</a>
+          <a href="#contact" class="nav-link text-sm font-semibold uppercase tracking-wider text-gray-300 hover:text-white transition-colors duration-200" data-link="contact">Contact</a>
+          <a href="#contact" class="bg-brand-yellow hover:bg-yellow-300 text-brand-black px-6 py-2.5 rounded-full font-bold text-sm uppercase tracking-widest transition-all hover:scale-105 active:scale-95 shadow-lg flex items-center gap-2">
+            Get a Quote <i data-lucide="chevron-right" class="w-4 h-4"></i>
+          </a>
+        </nav>
+
+        <!-- Mobile header actions -->
+        <div class="flex items-center gap-2 md:hidden">
+          <a href="tel:281-867-0678" class="p-2 text-brand-yellow">
+            <i data-lucide="phone" class="w-6 h-6"></i>
+          </a>
+          <button id="mobile-menu-toggle" class="text-white focus:outline-none p-2 rounded-lg bg-white/5 border border-white/10" aria-label="Toggle Menu">
+            <i data-lucide="menu" id="menu-icon" class="w-6 h-6"></i>
+            <i data-lucide="x" id="close-icon" class="w-6 h-6 hidden"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Nav Overlay -->
+    <div id="mobile-nav" class="fixed inset-0 top-16 bg-brand-black z-40 transition-transform duration-300 ease-in-out md:hidden translate-x-full">
+      <div class="px-6 py-8 h-full flex flex-col justify-between">
+        <div class="space-y-1">
+          <a href="#home" class="mobile-nav-link block py-4 text-2xl font-bold border-b border-white/5 uppercase tracking-tighter italic text-white" data-link="home">Home</a>
+          <a href="#products" class="mobile-nav-link block py-4 text-2xl font-bold border-b border-white/5 uppercase tracking-tighter italic text-white" data-link="products">Products</a>
+          <a href="#gallery" class="mobile-nav-link block py-4 text-2xl font-bold border-b border-white/5 uppercase tracking-tighter italic text-white" data-link="gallery">Gallery</a>
+          <a href="#guides" class="mobile-nav-link block py-4 text-2xl font-bold border-b border-white/5 uppercase tracking-tighter italic text-white" data-link="guides">Guides</a>
+          <a href="#about" class="mobile-nav-link block py-4 text-2xl font-bold border-b border-white/5 uppercase tracking-tighter italic text-white" data-link="about">About</a>
+          <a href="#contact" class="mobile-nav-link block py-4 text-2xl font-bold border-b border-white/5 uppercase tracking-tighter italic text-white" data-link="contact">Contact</a>
+        </div>
+        <div class="space-y-4 pb-12">
+          <a href="#contact" class="mobile-nav-link flex items-center justify-center w-full bg-brand-yellow text-brand-black py-5 rounded-xl font-black uppercase tracking-widest shadow-xl italic">
+            Request a Free Quote
+          </a>
+          <div class="flex justify-center gap-6 pt-4 text-white">
+            <a href="#"><i data-lucide="facebook" class="w-6 h-6"></i></a>
+            <a href="#"><i data-lucide="instagram" class="w-6 h-6"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="flex-grow">
+    <!-- HOME PAGE -->
+    <section data-page="home">
+      <!-- Hero Section -->
+      <section class="relative min-h-[80vh] md:h-[90vh] flex items-center bg-brand-black overflow-hidden py-12 md:py-0">
+        <div class="absolute inset-0 z-0">
+          <img src="https://picsum.photos/seed/signshop/1920/1080" alt="" class="w-full h-full object-cover opacity-40" loading="eager">
+          <div class="absolute inset-0 bg-gradient-to-r from-brand-black via-brand-black/90 to-brand-black/40 md:via-brand-black/80 md:to-transparent"></div>
+        </div>
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="max-w-4xl">
+            <div class="inline-flex items-center gap-2 bg-brand-yellow/10 border border-brand-yellow/20 text-brand-yellow px-4 py-1.5 rounded-full text-[10px] md:text-xs font-black uppercase tracking-widest mb-6">
+              <i data-lucide="award" class="w-4 h-4"></i> Established 1992
+            </div>
+            <h1 class="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-display font-black text-white uppercase italic leading-[1] mb-6 md:mb-8 tracking-tighter">
+              High-Impact <span class="text-brand-yellow drop-shadow-[0_4px_4px_rgba(0,0,0,0.5)]">Signage</span> <br class="hidden sm:block"> That Drives Your Business.
+            </h1>
+            <p class="text-lg md:text-xl text-gray-300 mb-8 md:mb-10 leading-relaxed font-medium max-w-2xl">
+              We specialize in custom vehicle graphics, industrial signage, and professional branding for fleets and local businesses. 30+ years of trusted expertise in La Porte, TX.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4">
+              <a href="#contact" class="bg-brand-yellow hover:bg-yellow-300 text-brand-black px-8 py-4 md:py-5 rounded-lg font-black text-lg uppercase tracking-widest transition-all transform hover:scale-105 active:scale-95 shadow-2xl flex items-center justify-center gap-2 italic">
+                Get a Quote <i data-lucide="chevron-right" class="w-6 h-6"></i>
+              </a>
+              <a href="#gallery" class="bg-white/10 hover:bg-white/20 backdrop-blur-md text-white border border-white/20 px-8 py-4 md:py-5 rounded-lg font-black text-lg uppercase tracking-widest transition-all flex items-center justify-center active:scale-95">
+                View Our Work
+              </a>
+            </div>
+            <div class="mt-12 md:mt-16 grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+              <div class="flex items-center gap-3">
+                <span class="text-brand-yellow font-display text-3xl md:text-4xl font-black italic">30+</span>
+                <span class="text-[10px] md:text-xs text-gray-400 uppercase font-black tracking-widest leading-tight">Years in<br>Business</span>
+              </div>
+              <div class="flex items-center gap-3 text-white">
+                <i data-lucide="shield-check" class="w-8 h-8 md:w-10 md:h-10 text-brand-yellow"></i>
+                <span class="text-[10px] md:text-xs text-gray-400 uppercase font-black tracking-widest leading-tight">In-house<br>Production</span>
+              </div>
+              <div class="flex items-center gap-3 text-white">
+                <i data-lucide="truck" class="w-8 h-8 md:w-10 md:h-10 text-brand-yellow"></i>
+                <span class="text-[10px] md:text-xs text-gray-400 uppercase font-black tracking-widest leading-tight">Fleet<br>Specialists</span>
+              </div>
+              <div class="flex items-center gap-3 text-white">
+                <i data-lucide="zap" class="w-8 h-8 md:w-10 md:h-10 text-brand-yellow"></i>
+                <span class="text-[10px] md:text-xs text-gray-400 uppercase font-black tracking-widest leading-tight">Fast<br>Turnaround</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Services Preview -->
+      <section class="py-20 md:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-12 md:mb-20">
+            <h2 class="text-brand-yellow font-black uppercase tracking-[0.2em] mb-4 text-xs">Professional Solutions</h2>
+            <h3 class="text-3xl md:text-5xl font-display font-black uppercase italic tracking-tight">Our Products & Services</h3>
+            <div class="w-16 md:w-24 h-1.5 md:h-2 bg-brand-yellow mx-auto mt-4 md:mt-6"></div>
+          </div>
+          <div id="home-services-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+            <!-- Injected by JS -->
+          </div>
+          <div class="mt-12 md:mt-16 text-center">
+            <a href="#products" class="inline-block bg-brand-black text-white px-10 py-4 rounded-lg font-black uppercase tracking-widest hover:bg-brand-gray transition-colors active:scale-95 shadow-xl">
+              See All Services
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Why Choose Us -->
+      <section class="py-20 md:py-24 bg-brand-black text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-center">
+            <div class="order-2 lg:order-1">
+              <h2 class="text-brand-yellow font-black uppercase tracking-[0.2em] mb-4 text-xs">The Coupland Difference</h2>
+              <h3 class="text-3xl md:text-5xl font-display font-black uppercase italic mb-8">Why Businesses Trust Us</h3>
+              <p class="text-gray-400 text-lg mb-10 leading-relaxed">
+                At Coupland Signs, we pride ourselves on making it 'in-house', unlike many others who order from third parties and mark it up. This means a faster, more affordable experience with direct control over quality.
+              </p>
+              <div id="home-why-us" class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                <!-- Injected by JS -->
+              </div>
+            </div>
+            <div class="relative order-1 lg:order-2">
+              <div class="absolute -inset-4 border-2 md:border-4 border-brand-yellow/30 rounded-2xl z-0"></div>
+              <div class="aspect-square w-full rounded-xl overflow-hidden relative z-10 shadow-2xl">
+                <img src="https://picsum.photos/seed/shopfront/800/800" alt="Shop frontage" class="w-full h-full object-cover">
+              </div>
+              <div class="absolute -bottom-6 md:-bottom-10 -left-6 md:-left-10 bg-brand-yellow p-6 md:p-8 rounded-xl z-20 shadow-2xl border-4 border-brand-black text-brand-black">
+                <span class="block text-4xl md:text-5xl font-display font-black italic">1992</span>
+                <span class="block text-[10px] md:text-xs font-black uppercase tracking-widest">Established</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Testimonials Section -->
+      <section class="py-20 md:py-24 bg-gray-50 border-y border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-12 md:mb-16">
+            <h2 class="text-brand-yellow font-black uppercase tracking-[0.2em] mb-4 text-xs">Testimonials</h2>
+            <h3 class="text-3xl md:text-4xl font-display font-black uppercase italic">Trusted by the Community</h3>
+          </div>
+          <div id="home-testimonials" class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+            <!-- Injected by JS -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Final CTA -->
+      <section class="py-20 md:py-24 bg-brand-yellow relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-1/3 h-full bg-brand-black skew-x-[-12deg] translate-x-1/2 hidden lg:block"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col lg:flex-row items-center justify-between gap-12 text-brand-black">
+          <div class="max-w-2xl text-center lg:text-left">
+            <h2 class="text-3xl md:text-5xl font-display font-black uppercase italic mb-6">Ready to upgrade your brand?</h2>
+            <p class="text-lg md:text-xl font-medium opacity-80 mb-8">
+              Get a free quote for your custom signs, vehicle graphics, or fleet branding today.
+            </p>
+            <a href="#contact" class="bg-brand-black text-white px-10 py-4 md:py-5 rounded-lg font-black text-lg uppercase tracking-widest hover:bg-brand-gray transition-all shadow-2xl flex items-center justify-center lg:justify-start gap-3 w-full sm:w-fit mx-auto lg:mx-0 active:scale-95 italic">
+              Request a Quote <i data-lucide="chevron-right" class="w-6 h-6"></i>
+            </a>
+          </div>
+          <div class="hidden lg:block text-white text-right">
+            <div class="font-display text-8xl font-black italic mb-2 tracking-tighter opacity-10">SINCE</div>
+            <div class="font-display text-9xl font-black italic leading-none tracking-tighter">1992</div>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <!-- PRODUCTS PAGE -->
+    <section data-page="products">
+      <section class="bg-brand-black py-24 px-4 text-center">
+        <h1 class="text-5xl md:text-7xl font-display font-black text-brand-yellow uppercase italic tracking-tight mb-6">
+          Products & Services
+        </h1>
+        <p class="max-w-2xl mx-auto text-gray-400 text-xl font-medium">
+          Professional-grade custom signage solutions for every application. Built in-house to ensure the highest quality.
+        </p>
+      </section>
+      <section id="products-list" class="py-24 space-y-32">
+        <!-- Injected by JS -->
+      </section>
+    </section>
+
+    <!-- GALLERY PAGE -->
+    <section data-page="gallery">
+      <section class="bg-brand-black py-16 md:py-24 px-4 text-center">
+        <h1 class="text-4xl md:text-7xl font-display font-black text-brand-yellow uppercase italic tracking-tight mb-4 md:mb-6">
+          Customer Gallery
+        </h1>
+        <p class="max-w-2xl mx-auto text-gray-400 text-lg md:text-xl font-medium">
+          A showcase of our recent projects across the Greater Houston area.
+        </p>
+      </section>
+      <section class="sticky top-[64px] md:top-20 z-30 bg-white/95 backdrop-blur-md border-b border-gray-100 overflow-x-auto no-scrollbar">
+        <div id="gallery-filters" class="max-w-7xl mx-auto px-4 py-4 md:py-8 flex gap-2 md:gap-4 flex-nowrap md:flex-wrap md:justify-center min-w-max md:min-w-0">
+          <!-- Injected by JS -->
+        </div>
+      </section>
+      <section class="py-12 md:py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div id="gallery-grid" class="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-10">
+            <!-- Injected by JS -->
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <!-- GUIDES PAGE -->
+    <section data-page="guides">
+      <section class="bg-brand-black py-24 px-4 text-center">
+        <h1 class="text-5xl md:text-7xl font-display font-black text-brand-yellow uppercase italic tracking-tight mb-6">
+          Expert Guides & Tips
+        </h1>
+        <p class="max-w-2xl mx-auto text-gray-400 text-xl font-medium">
+          Professional advice on design, maintenance, and installation for all your signage needs.
+        </p>
+      </section>
+      <section class="py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div id="guides-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+            <!-- Injected by JS -->
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <!-- ABOUT PAGE -->
+    <section data-page="about">
+      <section class="bg-brand-black py-24 px-4 text-center">
+        <h1 class="text-5xl md:text-7xl font-display font-black text-brand-yellow uppercase italic tracking-tight mb-6">
+          Our Story
+        </h1>
+        <p class="max-w-2xl mx-auto text-gray-400 text-xl font-medium">
+          Family-owned, locally-operated, and dedicated to the highest standards of sign making since 1992.
+        </p>
+      </section>
+      <section class="py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+            <div class="space-y-8">
+              <div class="inline-block bg-brand-yellow px-4 py-1 text-xs font-black uppercase tracking-widest italic text-brand-black">30+ Years of Quality</div>
+              <h2 class="text-4xl md:text-5xl font-display font-black uppercase italic leading-tight">Coupland Signs has been family owned and operated since 1992.</h2>
+              <p class="text-gray-600 text-lg leading-relaxed">
+                We've served the greater Houston area from our current location off of Main St. in La Porte since 2004. With over 30 years of experience, we provide beautiful and durable signage that helps businesses grow.
+              </p>
+              <p class="text-gray-600 text-lg leading-relaxed">
+                Our reliability has secured lasting relationships with many local organizations, including the City of La Porte, the La Porte Police Department, and the vast majority of La Porte's growing industrial presence.
+              </p>
+              <div class="grid grid-cols-2 gap-6 pt-8">
+                <div class="flex items-center gap-3 font-black uppercase tracking-widest text-sm italic"><i data-lucide="check-circle-2" class="text-brand-yellow w-6 h-6 shrink-0"></i>Local Houston Area</div>
+                <div class="flex items-center gap-3 font-black uppercase tracking-widest text-sm italic"><i data-lucide="check-circle-2" class="text-brand-yellow w-6 h-6 shrink-0"></i>In-House Design</div>
+                <div class="flex items-center gap-3 font-black uppercase tracking-widest text-sm italic"><i data-lucide="check-circle-2" class="text-brand-yellow w-6 h-6 shrink-0"></i>Premium Materials</div>
+                <div class="flex items-center gap-3 font-black uppercase tracking-widest text-sm italic"><i data-lucide="check-circle-2" class="text-brand-yellow w-6 h-6 shrink-0"></i>Longevity Focused</div>
+              </div>
+            </div>
+            <div class="relative">
+              <img src="https://picsum.photos/seed/owners/800/1000" alt="Our workshop" class="rounded-3xl shadow-2xl relative z-10">
+              <div class="absolute -bottom-10 -right-10 bg-brand-yellow p-12 rounded-[2.5rem] shadow-2xl z-20 hidden md:block border-8 border-white">
+                <p class="font-display text-2xl font-black uppercase italic leading-tight text-brand-black">
+                  Built on <br>Trust and <br>Integrity
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <!-- CONTACT PAGE -->
+    <section data-page="contact">
+      <section class="bg-brand-black py-16 md:py-24 px-4 text-center">
+        <h1 class="text-4xl md:text-7xl font-display font-black text-brand-yellow uppercase italic tracking-tight mb-4 md:mb-6">
+          Get a Quote
+        </h1>
+        <p class="max-w-2xl mx-auto text-gray-400 text-lg md:text-xl font-medium">
+          Ready to start your next project? Fill out the form below and we'll get back to you with a professional quote.
+        </p>
+      </section>
+      <section class="py-12 md:py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-20">
+            <!-- Contact Info -->
+            <div>
+              <div class="space-y-10 md:space-y-12">
+                <div>
+                  <h2 class="text-2xl md:text-3xl font-display font-black uppercase italic mb-8">Contact Information</h2>
+                  <div class="space-y-6 md:space-y-8">
+                    <div class="flex items-start gap-5 md:gap-6">
+                      <div class="w-12 h-12 md:w-14 md:h-14 bg-brand-yellow text-brand-black rounded-xl md:rounded-2xl flex items-center justify-center shrink-0 shadow-lg"><i data-lucide="phone" class="w-5 h-5 md:w-6 md:h-6"></i></div>
+                      <div>
+                        <h4 class="text-[10px] font-black uppercase tracking-[0.2em] text-gray-400 mb-1">Call Us</h4>
+                        <a href="tel:281-867-0678" class="text-xl md:text-2xl font-display font-black text-brand-black italic hover:text-brand-yellow transition-colors">281-867-0678</a>
+                      </div>
+                    </div>
+                    <div class="flex items-start gap-5 md:gap-6">
+                      <div class="w-12 h-12 md:w-14 md:h-14 bg-brand-yellow text-brand-black rounded-xl md:rounded-2xl flex items-center justify-center shrink-0 shadow-lg"><i data-lucide="mail" class="w-5 h-5 md:w-6 md:h-6"></i></div>
+                      <div>
+                        <h4 class="text-[10px] font-black uppercase tracking-[0.2em] text-gray-400 mb-1">Email Us</h4>
+                        <a href="mailto:orders@couplandsigns.com" class="text-lg md:text-2xl font-display font-black text-brand-black italic break-all hover:text-brand-yellow transition-colors leading-tight">orders@couplandsigns.com</a>
+                      </div>
+                    </div>
+                    <div class="flex items-start gap-5 md:gap-6">
+                      <div class="w-12 h-12 md:w-14 md:h-14 bg-brand-yellow text-brand-black rounded-xl md:rounded-2xl flex items-center justify-center shrink-0 shadow-lg"><i data-lucide="map-pin" class="w-5 h-5 md:w-6 md:h-6"></i></div>
+                      <div>
+                        <h4 class="text-[10px] font-black uppercase tracking-[0.2em] text-gray-400 mb-1">Visit Shop</h4>
+                        <p class="text-lg md:text-xl font-display font-black text-brand-black italic leading-tight uppercase">118 S 5th St.<br>La Porte, TX 77571</p>
+                      </div>
+                    </div>
+                    <div class="flex items-start gap-5 md:gap-6">
+                      <div class="w-12 h-12 md:w-14 md:h-14 bg-brand-yellow text-brand-black rounded-xl md:rounded-2xl flex items-center justify-center shrink-0 shadow-lg"><i data-lucide="clock" class="w-5 h-5 md:w-6 md:h-6"></i></div>
+                      <div>
+                        <h4 class="text-[10px] font-black uppercase tracking-[0.2em] text-gray-400 mb-1">Business Hours</h4>
+                        <p class="text-base md:text-lg font-display font-black text-brand-black italic leading-tight uppercase">Mon-Fri: 9:00am – 5:30pm<br>Sat-Sun: Closed</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Form Container -->
+            <div id="contact-form-container">
+              <!-- Rendered by JS -->
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Map -->
+      <section class="h-[300px] md:h-[400px] w-full bg-gray-200 relative grayscale hover:grayscale-0 transition-all duration-700">
+        <div class="absolute inset-0 flex items-center justify-center bg-black/5 pointer-events-none z-10 p-4">
+           <div class="bg-brand-black text-white px-6 md:px-8 py-3 md:py-4 rounded-lg md:rounded-xl shadow-2xl flex items-center gap-3 md:gap-4">
+              <i data-lucide="map-pin" class="text-brand-yellow w-5 h-5 md:w-6 md:h-6"></i>
+              <span class="font-display font-black uppercase italic tracking-widest text-xs md:text-base">Coupland Signs HQ</span>
+           </div>
+        </div>
+        <iframe title="location-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3464.7330743153664!2d-95.057777!3d29.664444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x864098616a656753%3A0xc06e30b80981358d!2s118%20S%205th%20St%2C%20La%20Porte%2C%20TX%2077571!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus" class="w-full h-full border-0" allowfullscreen loading="lazy"></iframe>
+      </section>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-brand-black text-white pt-20 pb-24 md:pb-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-12 text-center md:text-left">
+      <div class="space-y-6">
+        <div class="inline-block bg-brand-yellow px-4 py-2 skew-x-[-12deg]">
+          <span class="font-display text-xl font-black text-brand-black uppercase italic">Coupland Signs</span>
+        </div>
+        <p class="text-gray-400 text-sm leading-relaxed">
+          Your trusted local partner for high-impact custom signs and graphics in La Porte, TX. Family owned and operated since 1992.
+        </p>
+        <div class="flex justify-center md:justify-start space-x-4">
+          <a href="#" class="p-2 bg-gray-800 rounded-full hover:bg-brand-yellow hover:text-brand-black transition-colors"><i data-lucide="facebook" class="w-5 h-5"></i></a>
+          <a href="#" class="p-2 bg-gray-800 rounded-full hover:bg-brand-yellow hover:text-brand-black transition-colors"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+        </div>
+      </div>
+      <div>
+        <h4 class="text-brand-yellow font-bold uppercase tracking-widest mb-6">Quick Links</h4>
+        <ul class="space-y-4 text-sm text-gray-400 font-medium">
+          <li><a href="#products" class="hover:text-white transition-colors">Products & Services</a></li>
+          <li><a href="#gallery" class="hover:text-white transition-colors">Customer Gallery</a></li>
+          <li><a href="#guides" class="hover:text-white transition-colors">Expert Guides</a></li>
+          <li><a href="#about" class="hover:text-white transition-colors">About Our Story</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-brand-yellow font-bold uppercase tracking-widest mb-6">Contact Us</h4>
+        <ul class="space-y-4 text-sm text-gray-400">
+          <li class="flex items-start justify-center md:justify-start gap-3">
+            <i data-lucide="phone" class="w-5 h-5 text-brand-yellow shrink-0"></i>
+            <a href="tel:281-867-0678" class="hover:text-white transition-colors">281-867-0678</a>
+          </li>
+          <li class="flex items-start justify-center md:justify-start gap-3">
+            <i data-lucide="mail" class="w-5 h-5 text-brand-yellow shrink-0"></i>
+            <a href="mailto:orders@couplandsigns.com" class="hover:text-white transition-colors">orders@couplandsigns.com</a>
+          </li>
+          <li class="flex items-start justify-center md:justify-start gap-3">
+            <i data-lucide="map-pin" class="w-5 h-5 text-brand-yellow shrink-0"></i>
+            <span>118 S 5th St.<br>La Porte, TX 77571</span>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-brand-yellow font-bold uppercase tracking-widest mb-6">Store Hours</h4>
+        <ul class="space-y-4 text-sm text-gray-400">
+          <li class="flex justify-between"><span>Mon - Fri:</span><span class="text-white">9:00am – 5:30pm</span></li>
+          <li class="flex justify-between"><span>Sat - Sun:</span><span class="text-white">Closed</span></li>
+        </ul>
+        <div class="mt-8 flex items-center justify-center md:justify-start gap-2">
+          <div class="flex text-brand-yellow">
+            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+          </div>
+          <span class="text-xs font-bold uppercase tracking-widest">5.0 Google Rating</span>
+        </div>
+      </div>
+    </div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-20 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500 font-bold uppercase tracking-widest text-center">
+      <p>&copy; 2024 Coupland Signs. All rights reserved.</p>
+      <div class="flex gap-6">
+        <a href="#" class="hover:text-white">Privacy Policy</a>
+        <a href="#" class="hover:text-white">Sitemap</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Mobile Sticky Bar -->
+  <div class="md:hidden fixed bottom-0 left-0 right-0 z-50 p-3 flex gap-2 bg-brand-black/90 backdrop-blur-md border-t border-white/10 shadow-[0_-10px_20px_rgba(0,0,0,0.3)]">
+    <a href="tel:281-867-0678" class="flex-1 bg-white/10 text-white flex items-center justify-center gap-2 py-3.5 rounded-xl font-bold uppercase text-xs tracking-widest active:scale-95 transition-transform">
+      <i data-lucide="phone" class="w-4 h-4"></i> Call
+    </a>
+    <a href="#contact" class="flex-[2] bg-brand-yellow text-brand-black flex items-center justify-center gap-2 py-3.5 rounded-xl font-black uppercase text-xs tracking-widest active:scale-95 transition-transform shadow-lg italic">
+      <i data-lucide="message-square" class="w-4 h-4"></i> Get A Quote
+    </a>
+  </div>
+
+  <script>
+    // DATA
+    const SERVICES = [
+      { id: 'vehicle-graphics', title: 'Vehicle Graphics', description: 'Turn your fleet into a mobile billboard. High-durability wraps and lettering for any vehicle.', benefits: ['Mobile Advertising', 'Professional Appearance', 'UV Protection'], imageUrl: 'https://picsum.photos/seed/van-wrap/800/600' },
+      { id: 'trailer-graphics', title: 'Trailer Graphics', description: 'Large-scale branding for haulers and trailers. Maximum visibility on the open road.', benefits: ['Full Coverage', 'Rugged Materials', 'Fleet Consistency'], imageUrl: 'https://picsum.photos/seed/trailer/800/600' },
+      { id: 'stickers-decals', title: 'Stickers & Decals', description: 'Custom hardhat stickers, equipment labels, and promotional decals built to last.', benefits: ['Weatherproof', 'Custom Shapes', 'Bulk Pricing'], imageUrl: 'https://picsum.photos/seed/decals/800/600' },
+      { id: 'banners', title: 'Banners', description: 'Full-color banners for events, sales, and temporary signage. Reinforced for outdoor use.', benefits: ['Fast Turnaround', 'High Resolution', 'Easy Install'], imageUrl: 'https://picsum.photos/seed/banner/800/600' },
+      { id: 'magnets', title: 'Magnets', description: 'Removable vehicle magnets. Perfect for dual-use personal/business vehicles.', benefits: ['Easy Removal', 'Heavy Duty', 'Cost-Effective'], imageUrl: 'https://picsum.photos/seed/magnets/800/600' },
+      { id: 'industrial-signage', title: 'Industrial & Safety', description: 'OSHA-compliant safety signs, lockout tags, and facility directional signage.', benefits: ['Compliance Ready', 'Durable Aluminum', 'Highly Visible'], imageUrl: 'https://picsum.photos/seed/factory-sign/800/600' }
+    ];
+
+    const GALLERY_ITEMS = [
+      { id: '1', title: 'City of La Porte Fleet', category: 'Vehicle Graphics', imageUrl: 'https://picsum.photos/seed/fleet1/600/600', location: 'La Porte, TX' },
+      { id: '2', title: 'Industrial Safety Signs', category: 'Industrial & Safety', imageUrl: 'https://picsum.photos/seed/safety1/600/600', location: 'Deer Park, TX' },
+      { id: '3', title: 'Custom Coffee Trailer', category: 'Trailer Graphics', imageUrl: 'https://picsum.photos/seed/trailer1/600/600', location: 'Houston, TX' },
+      { id: '4', title: 'Construction Banners', category: 'Banners', imageUrl: 'https://picsum.photos/seed/banner1/600/600', location: 'Baytown, TX' },
+      { id: '5', title: 'Refinery Hardhat Decals', category: 'Stickers & Decals', imageUrl: 'https://picsum.photos/seed/decals1/600/600', location: 'Pasadena, TX' },
+      { id: '6', title: 'Service Truck Magnet', category: 'Magnets', imageUrl: 'https://picsum.photos/seed/magnet1/600/600', location: 'La Porte, TX' },
+    ];
+
+    const GUIDES = [
+      { id: 'vinyl-maintenance', title: "Do's & Don'ts for Maintaining Vinyl Graphics", excerpt: "Keep your vehicle looking sharp with these essential cleaning tips from the pros.", author: "Travis Coupland", readTime: "3 min", imageUrl: 'https://picsum.photos/seed/cleaning/400/300', category: "How-tos" },
+      { id: 'mockup-photos', title: "Taking Better Photos for Your Sign Mockups", excerpt: "How to capture the right dimensions so your final sign fits perfectly every time.", author: "Travis Coupland", readTime: "2 min", imageUrl: 'https://picsum.photos/seed/camera/400/300', category: "Design" },
+      { id: 'qr-codes', title: "How to Use QR Codes to Grow Your Business", excerpt: "Turn your physical signage into a digital marketing engine with these simple tricks.", author: "Travis Coupland", readTime: "4 min", imageUrl: 'https://picsum.photos/seed/qr/400/300', category: "Design" }
+    ];
+
+    const TESTIMONIALS = [
+      { id: '1', name: "Jenny Allen", business: "Sweet Pea Coffee Co.", content: "Coupland really hooked us up to customize our mobile coffee trailer! Months later we're still so happy with how it turned out.", rating: 5 },
+      { id: '2', name: "Kelly Bryant", business: "SoS Texas City", content: "Fast, reliable, and reasonable prices. They created a wonderful vinyl sticker for our lobby that the kids simply love!", rating: 5 },
+      { id: '3', name: "Eva Carpenter", business: "Carpenter Glass & Mirror", content: "Extremely professional but still has that family feel. From start to finish, the process was flawless.", rating: 5 }
+    ];
+
+    const WHY_CHOOSE_US = [
+      { icon: 'users', title: "Family Owned", desc: "Local hands and hearts since 1992." },
+      { icon: 'award', title: "30+ Years Experience", desc: "Decades of expertise in custom signage." },
+      { icon: 'clock', title: "In-House Production", desc: "No middleman means faster turnaround." },
+      { icon: 'map-pin', title: "La Porte Proud", desc: "Serving the Greater Houston Area with pride." }
+    ];
+
+    // ROUTER
+    function navigate() {
+      const hash = window.location.hash || '#home';
+      const pageId = hash.substring(1);
+      
+      document.querySelectorAll('[data-page]').forEach(page => {
+        page.classList.remove('active');
+        if (page.getAttribute('data-page') === pageId) {
+          page.classList.add('active');
+        }
+      });
+
+      document.querySelectorAll('.nav-link').forEach(link => {
+        link.classList.remove('text-brand-yellow', 'underline', 'underline-offset-8', 'decoration-2');
+        if (link.getAttribute('data-link') === pageId) {
+          link.classList.add('text-brand-yellow', 'underline', 'underline-offset-8', 'decoration-2');
+        }
+      });
+
+      window.scrollTo(0,0);
+    }
+
+    window.addEventListener('hashchange', navigate);
+    window.addEventListener('load', () => {
+      navigate();
+      renderHome();
+      renderProducts();
+      renderGallery();
+      renderGuides();
+      renderContactForm();
+      lucide.createIcons();
+    });
+
+    // MOBILE MENU
+    const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+    const mobileNav = document.getElementById('mobile-nav');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+
+    mobileMenuToggle.addEventListener('click', () => {
+      const isOpen = mobileNav.classList.contains('translate-x-0');
+      if (isOpen) {
+        mobileNav.classList.add('translate-x-full');
+        mobileNav.classList.remove('translate-x-0');
+        menuIcon.classList.remove('hidden');
+        closeIcon.classList.add('hidden');
+        document.body.style.overflow = 'unset';
+      } else {
+        mobileNav.classList.remove('translate-x-full');
+        mobileNav.classList.add('translate-x-0');
+        menuIcon.classList.add('hidden');
+        closeIcon.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+      }
+    });
+
+    document.querySelectorAll('.mobile-nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileNav.classList.add('translate-x-full');
+        mobileNav.classList.remove('translate-x-0');
+        menuIcon.classList.remove('hidden');
+        closeIcon.classList.add('hidden');
+        document.body.style.overflow = 'unset';
+      });
+    });
+
+    // RENDERING FUNCTIONS
+    function renderHome() {
+      const servicesGrid = document.getElementById('home-services-grid');
+      servicesGrid.innerHTML = SERVICES.slice(0, 3).map(service => `
+        <div class="group relative bg-gray-50 rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300 border border-gray-100 flex flex-col">
+          <div class="aspect-[4/3] w-full overflow-hidden bg-gray-200">
+            <img src="${service.imageUrl}" alt="${service.title}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy">
+          </div>
+          <div class="p-6 md:p-8 flex flex-col flex-grow">
+            <h4 class="text-2xl font-display font-black uppercase italic mb-3">${service.title}</h4>
+            <p class="text-gray-600 mb-6 text-sm leading-relaxed flex-grow">${service.description}</p>
+            <ul class="space-y-2 mb-8">
+              ${service.benefits.map(b => `
+                <li class="flex items-center gap-2 text-[10px] font-bold uppercase tracking-wider text-brand-gray">
+                  <div class="w-1.5 h-1.5 rounded-full bg-brand-yellow shrink-0"></div>${b}
+                </li>
+              `).join('')}
+            </ul>
+            <a href="#contact" class="inline-flex items-center gap-2 text-sm font-black uppercase tracking-widest group-hover:text-brand-yellow transition-colors mt-auto active:scale-95">
+              Request Quote <i data-lucide="chevron-right" class="w-4 h-4"></i>
+            </a>
+          </div>
+        </div>
+      `).join('');
+
+      const whyUsGrid = document.getElementById('home-why-us');
+      whyUsGrid.innerHTML = WHY_CHOOSE_US.map(item => `
+        <div class="space-y-3">
+          <div class="w-12 h-12 bg-brand-yellow text-brand-black flex items-center justify-center rounded-lg shadow-lg">
+            <i data-lucide="${item.icon}" class="w-6 h-6"></i>
+          </div>
+          <h5 class="font-display font-black uppercase text-xl italic">${item.title}</h5>
+          <p class="text-gray-400 text-sm leading-tight">${item.desc}</p>
+        </div>
+      `).join('');
+
+      const testimonialsGrid = document.getElementById('home-testimonials');
+      testimonialsGrid.innerHTML = TESTIMONIALS.map(t => `
+        <div class="bg-white p-6 md:p-8 rounded-2xl shadow-xl border border-gray-100 flex flex-col">
+          <div class="flex text-brand-yellow mb-6">
+            ${Array(t.rating).fill('<i data-lucide="star" class="w-4 h-4 fill-current"></i>').join('')}
+          </div>
+          <p class="text-gray-700 italic mb-8 leading-relaxed flex-grow">"${t.content}"</p>
+          <div class="flex items-center gap-4 pt-4 border-t border-gray-50">
+            <div class="w-10 h-10 md:w-12 md:h-12 bg-brand-yellow rounded-full flex items-center justify-center font-black text-brand-black text-sm">
+              ${t.name[0]}
+            </div>
+            <div>
+              <h6 class="font-black uppercase tracking-wider text-[11px] md:text-xs text-brand-black">${t.name}</h6>
+              <span class="text-gray-500 text-[10px] font-bold uppercase tracking-widest">${t.business}</span>
+            </div>
+          </div>
+        </div>
+      `).join('');
+      
+      lucide.createIcons();
+    }
+
+    function renderProducts() {
+      const container = document.getElementById('products-list');
+      container.innerHTML = SERVICES.map((service, idx) => `
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col ${idx % 2 !== 0 ? 'lg:flex-row-reverse' : 'lg:flex-row'} gap-12 lg:gap-24 items-center">
+          <div class="flex-1 w-full relative">
+            <div class="absolute -inset-4 bg-brand-yellow/10 rounded-2xl -z-10 rotate-2"></div>
+            <div class="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl bg-gray-100">
+              <img src="${service.imageUrl}" alt="${service.title}" class="w-full h-full object-cover">
+            </div>
+          </div>
+          <div class="flex-1 space-y-8 text-center lg:text-left">
+            <div class="inline-block bg-brand-yellow px-4 py-1 text-xs font-black uppercase tracking-[0.2em] italic mb-2 text-brand-black">Featured Service</div>
+            <h2 class="text-4xl md:text-5xl font-display font-black uppercase italic tracking-tight">${service.title}</h2>
+            <p class="text-gray-600 text-lg leading-relaxed">${service.description}</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              ${service.benefits.map(b => `<div class="flex items-center gap-3 text-sm font-bold uppercase tracking-wider justify-center lg:justify-start"><i data-lucide="check-circle-2" class="w-5 h-5 text-brand-yellow shrink-0"></i>${b}</div>`).join('')}
+            </div>
+            <div class="pt-8">
+              <a href="#contact" class="bg-brand-black text-white px-10 py-4 rounded-lg font-black uppercase tracking-widest hover:bg-brand-gray transition-all shadow-xl inline-flex items-center gap-2 italic">Get a Quote <i data-lucide="chevron-right" class="w-5 h-5"></i></a>
+            </div>
+          </div>
+        </div>
+      `).join('');
+      lucide.createIcons();
+    }
+
+    let currentGalleryFilter = 'All';
+    function renderGallery() {
+      const filters = ['All', ...new Set(GALLERY_ITEMS.map(i => i.category))];
+      const filtersContainer = document.getElementById('gallery-filters');
+      filtersContainer.innerHTML = filters.map(cat => `
+        <button class="gallery-filter-btn px-5 py-2 md:px-6 md:py-2.5 rounded-full text-[10px] md:text-xs font-black uppercase tracking-widest transition-all whitespace-nowrap active:scale-95 ${currentGalleryFilter === cat ? 'bg-brand-yellow text-brand-black shadow-lg shadow-brand-yellow/20' : 'bg-gray-100 text-gray-500 hover:bg-gray-200'}" data-cat="${cat}">${cat}</button>
+      `).join('');
+
+      document.querySelectorAll('.gallery-filter-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          currentGalleryFilter = e.target.getAttribute('data-cat');
+          renderGallery();
+        });
+      });
+
+      const items = currentGalleryFilter === 'All' ? GALLERY_ITEMS : GALLERY_ITEMS.filter(i => i.category === currentGalleryFilter);
+      const grid = document.getElementById('gallery-grid');
+      grid.innerHTML = items.map(item => `
+        <div class="group relative bg-white rounded-xl md:rounded-2xl overflow-hidden shadow-md md:shadow-lg border border-gray-100 transition-all hover:-translate-y-2 hover:shadow-2xl">
+          <div class="aspect-square overflow-hidden bg-gray-100">
+            <img src="${item.imageUrl}" alt="${item.title}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy">
+          </div>
+          <div class="p-3 md:p-6">
+            <div class="flex flex-col sm:flex-row justify-between items-start mb-1 md:mb-2 gap-1">
+              <span class="text-brand-yellow text-[9px] md:text-[10px] font-black uppercase tracking-[0.2em]">${item.category}</span>
+              <span class="text-gray-400 text-[9px] md:text-[10px] font-bold uppercase tracking-widest truncate max-w-full">${item.location}</span>
+            </div>
+            <h3 class="text-sm md:text-xl font-display font-black uppercase italic text-brand-black leading-tight">${item.title}</h3>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function renderGuides() {
+      const grid = document.getElementById('guides-grid');
+      grid.innerHTML = GUIDES.map(guide => `
+        <article class="flex flex-col group h-full bg-white border border-gray-100 rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-300">
+          <div class="aspect-[16/10] overflow-hidden bg-gray-100">
+            <img src="${guide.imageUrl}" alt="${guide.title}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+          </div>
+          <div class="p-8 flex flex-col flex-grow">
+            <div class="flex items-center gap-3 text-[10px] font-black uppercase tracking-widest text-brand-yellow mb-4">
+              <span class="bg-brand-black px-2 py-0.5 rounded italic">${guide.category}</span>
+              <span class="text-gray-400">•</span>
+              <span class="flex items-center gap-1 text-gray-400"><i data-lucide="clock" class="w-3 h-3"></i> ${guide.readTime}</span>
+            </div>
+            <h2 class="text-2xl font-display font-black uppercase italic mb-4 leading-tight group-hover:text-brand-yellow transition-colors text-brand-black">
+              ${guide.title}
+            </h2>
+            <p class="text-gray-600 text-sm leading-relaxed mb-8 flex-grow">${guide.excerpt}</p>
+            <div class="pt-6 border-t border-gray-100 flex items-center justify-between">
+              <div class="flex items-center gap-2 text-xs font-bold text-gray-400 uppercase tracking-widest"><i data-lucide="user" class="w-4 h-4 text-brand-yellow"></i>${guide.author}</div>
+              <button class="text-brand-black font-black uppercase tracking-widest text-xs flex items-center gap-1 hover:text-brand-yellow transition-colors italic">Read Guide <i data-lucide="chevron-right" class="w-4 h-4"></i></button>
+            </div>
+          </div>
+        </article>
+      `).join('');
+      lucide.createIcons();
+    }
+
+    function renderContactForm(success = false) {
+      const container = document.getElementById('contact-form-container');
+      if (success) {
+        container.innerHTML = `
+          <div class="bg-white p-6 md:p-12 rounded-[1.5rem] md:rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.08)] border border-gray-100 text-center py-12 md:py-20 space-y-6">
+            <div class="w-20 h-20 md:w-24 md:h-24 bg-brand-yellow text-brand-black rounded-full flex items-center justify-center mx-auto mb-8 shadow-2xl">
+              <i data-lucide="check" class="w-10 h-10 md:w-12 md:h-12"></i>
+            </div>
+            <h2 class="text-3xl md:text-4xl font-display font-black uppercase italic tracking-tight text-brand-black">Quote Request Sent!</h2>
+            <p class="text-gray-600 text-lg">Thank you for reaching out. A team member will contact you within 24 hours.</p>
+            <button onclick="renderContactForm(false)" class="inline-block text-brand-yellow font-black uppercase tracking-[0.2em] text-xs md:text-sm underline underline-offset-8 active:scale-95">Send Another Request</button>
+          </div>
+        `;
+        lucide.createIcons();
+      } else {
+        container.innerHTML = `
+          <div class="bg-white p-6 md:p-12 rounded-[1.5rem] md:rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.08)] border border-gray-100 relative z-10">
+            <form id="quote-form" class="space-y-5 md:space-y-6 text-brand-black">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 md:gap-6">
+                <div class="space-y-1.5"><label class="text-[10px] font-black uppercase tracking-widest text-gray-500 ml-1">Full Name</label><input type="text" required autoComplete="name" placeholder="Your name" class="w-full bg-gray-50 border border-gray-200 rounded-xl px-5 py-3.5 md:py-4 focus:ring-2 focus:ring-brand-yellow focus:border-transparent outline-none transition-all text-sm md:text-base"></div>
+                <div class="space-y-1.5"><label class="text-[10px] font-black uppercase tracking-widest text-gray-500 ml-1">Email Address</label><input type="email" required autoComplete="email" inputMode="email" placeholder="name@company.com" class="w-full bg-gray-50 border border-gray-200 rounded-xl px-5 py-3.5 md:py-4 focus:ring-2 focus:ring-brand-yellow focus:border-transparent outline-none transition-all text-sm md:text-base"></div>
+              </div>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 md:gap-6">
+                <div class="space-y-1.5"><label class="text-[10px] font-black uppercase tracking-widest text-gray-500 ml-1">Phone Number</label><input type="tel" autoComplete="tel" inputMode="tel" placeholder="(281) 000-0000" class="w-full bg-gray-50 border border-gray-200 rounded-xl px-5 py-3.5 md:py-4 focus:ring-2 focus:ring-brand-yellow focus:border-transparent outline-none transition-all text-sm md:text-base"></div>
+                <div class="space-y-1.5">
+                  <label class="text-[10px] font-black uppercase tracking-widest text-gray-500 ml-1">Service Type</label>
+                  <select class="w-full bg-gray-50 border border-gray-200 rounded-xl px-5 py-3.5 md:py-4 focus:ring-2 focus:ring-brand-yellow focus:border-transparent outline-none transition-all cursor-pointer text-sm md:text-base">
+                    <option>Vehicle Graphics</option><option>Trailer Graphics</option><option>Stickers & Decals</option><option>Banners</option><option>Magnets</option><option>Industrial Signage</option><option>Other / Custom</option>
+                  </select>
+                </div>
+              </div>
+              <div class="space-y-1.5"><label class="text-[10px] font-black uppercase tracking-widest text-gray-500 ml-1">Project Details</label><textarea rows="4" required placeholder="Tell us about your project..." class="w-full bg-gray-50 border border-gray-200 rounded-xl px-5 py-3.5 md:py-4 focus:ring-2 focus:ring-brand-yellow focus:border-transparent outline-none transition-all text-sm md:text-base"></textarea></div>
+              <button type="submit" class="w-full bg-brand-yellow text-brand-black py-4 md:py-5 rounded-xl font-black uppercase tracking-widest text-base md:text-lg shadow-2xl hover:bg-yellow-300 transition-all flex items-center justify-center gap-3 active:scale-[0.98] italic">Send Quote Request <i data-lucide="send" class="w-5 h-5 md:w-6 md:h-6"></i></button>
+              <p class="text-center text-[10px] text-gray-400 font-bold uppercase tracking-widest pt-2 md:pt-4">No obligation. Quick response guaranteed.</p>
+            </form>
+          </div>
+        `;
+        document.getElementById('quote-form').addEventListener('submit', (e) => {
+          e.preventDefault();
+          const btn = e.target.querySelector('button');
+          btn.disabled = true;
+          btn.innerText = 'Sending Request...';
+          setTimeout(() => renderContactForm(true), 1500);
+        });
+        lucide.createIcons();
+      }
+    }
+  </script>
+</body>
+</html>
