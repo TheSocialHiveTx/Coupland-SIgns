@@ -70,7 +70,7 @@
       <div class="flex justify-between items-center h-16 md:h-20">
        <a href="#home" class="flex items-center shrink-0 group">
         <img
-          src="f14e3b13-ef41-407e-b5d2-b79958d0c47a.png"
+          src="images/f14e3b13-ef41-407e-b5d2-b79958d0c47a.png"
           alt="Coupland Signs"
           class="h-10 md:h-14 w-auto shadow-md transition-opacity duration-300 group-hover:opacity-90"
         />
@@ -131,56 +131,64 @@
     <!-- HOME PAGE -->
     <section data-page="home">
       <!-- Hero Section -->
-      <section class="relative min-h-[80vh] md:h-[90vh] flex items-center bg-brand-black overflow-hidden py-12 md:py-0">
-        <div class="absolute inset-0 z-0">
-          <img
-            src="images/Screenshot%202025-12-28%20224110.png"
-            alt=""
-            class="w-full h-full object-cover opacity-40"
-            loading="eager"
-          />
-          <div class="absolute inset-0 bg-gradient-to-r from-brand-black via-brand-black/90 to-brand-black/40 md:via-brand-black/80 md:to-transparent"></div>
+<section class="relative min-h-[80vh] md:h-[90vh] flex items-center bg-brand-black overflow-hidden py-12 md:py-0">
+  <div class="absolute inset-0 z-0">
+    <img
+      src="images/Screenshot%202025-12-28%20224110.png"
+      alt=""
+      class="w-full h-full object-cover opacity-40"
+      loading="eager"
+    />
+    <!-- Lighter + reversed gradient (right -> left), so left side is clearer -->
+    <div class="absolute inset-0 bg-gradient-to-l from-brand-black/50 via-brand-black/20 to-transparent"></div>
+  </div>
+
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-4xl">
+      <div class="inline-flex items-center gap-2 bg-brand-yellow/10 border border-brand-yellow/20 text-brand-yellow px-4 py-1.5 rounded-full text-[10px] md:text-xs font-black uppercase tracking-widest mb-6">
+        <i data-lucide="award" class="w-4 h-4"></i> Established 1992
+      </div>
+
+      <h1 class="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-display font-black text-white uppercase italic leading-[1] mb-6 md:mb-8 tracking-tighter">
+        High-Impact <span class="text-brand-yellow drop-shadow-[0_4px_4px_rgba(0,0,0,0.5)]">Signage</span>
+        <br class="hidden sm:block"> That Drives Your Business.
+      </h1>
+
+      <p class="text-lg md:text-xl text-gray-300 mb-8 md:mb-10 leading-relaxed font-medium max-w-2xl">
+        We specialize in custom vehicle graphics, industrial signage, and professional branding for fleets and local businesses. 30+ years of trusted expertise in La Porte, TX.
+      </p>
+
+      <div class="flex flex-col sm:flex-row gap-4">
+        <a href="#contact" class="bg-brand-yellow hover:bg-yellow-300 text-brand-black px-8 py-4 md:py-5 rounded-lg font-black text-lg uppercase tracking-widest transition-all transform hover:scale-105 active:scale-95 shadow-2xl flex items-center justify-center gap-2 italic">
+          Get a Quote <i data-lucide="chevron-right" class="w-6 h-6"></i>
+        </a>
+        <a href="#gallery" class="bg-white/10 hover:bg-white/20 backdrop-blur-md text-white border border-white/20 px-8 py-4 md:py-5 rounded-lg font-black text-lg uppercase tracking-widest transition-all flex items-center justify-center active:scale-95">
+          View Our Work
+        </a>
+      </div>
+
+      <div class="mt-12 md:mt-16 grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+        <div class="flex items-center gap-3">
+          <span class="text-brand-yellow font-display text-3xl md:text-4xl font-black italic">30+</span>
+          <span class="text-[10px] md:text-xs text-gray-400 uppercase font-black tracking-widest leading-tight">Years in<br>Business</span>
         </div>
-        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div class="max-w-4xl">
-            <div class="inline-flex items-center gap-2 bg-brand-yellow/10 border border-brand-yellow/20 text-brand-yellow px-4 py-1.5 rounded-full text-[10px] md:text-xs font-black uppercase tracking-widest mb-6">
-              <i data-lucide="award" class="w-4 h-4"></i> Established 1992
-            </div>
-            <h1 class="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-display font-black text-white uppercase italic leading-[1] mb-6 md:mb-8 tracking-tighter">
-              High-Impact <span class="text-brand-yellow drop-shadow-[0_4px_4px_rgba(0,0,0,0.5)]">Signage</span> <br class="hidden sm:block"> That Drives Your Business.
-            </h1>
-            <p class="text-lg md:text-xl text-gray-300 mb-8 md:mb-10 leading-relaxed font-medium max-w-2xl">
-              We specialize in custom vehicle graphics, industrial signage, and professional branding for fleets and local businesses. 30+ years of trusted expertise in La Porte, TX.
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4">
-              <a href="#contact" class="bg-brand-yellow hover:bg-yellow-300 text-brand-black px-8 py-4 md:py-5 rounded-lg font-black text-lg uppercase tracking-widest transition-all transform hover:scale-105 active:scale-95 shadow-2xl flex items-center justify-center gap-2 italic">
-                Get a Quote <i data-lucide="chevron-right" class="w-6 h-6"></i>
-              </a>
-              <a href="#gallery" class="bg-white/10 hover:bg-white/20 backdrop-blur-md text-white border border-white/20 px-8 py-4 md:py-5 rounded-lg font-black text-lg uppercase tracking-widest transition-all flex items-center justify-center active:scale-95">
-                View Our Work
-              </a>
-            </div>
-            <div class="mt-12 md:mt-16 grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-              <div class="flex items-center gap-3">
-                <span class="text-brand-yellow font-display text-3xl md:text-4xl font-black italic">30+</span>
-                <span class="text-[10px] md:text-xs text-gray-400 uppercase font-black tracking-widest leading-tight">Years in<br>Business</span>
-              </div>
-              <div class="flex items-center gap-3 text-white">
-                <i data-lucide="shield-check" class="w-8 h-8 md:w-10 md:h-10 text-brand-yellow"></i>
-                <span class="text-[10px] md:text-xs text-gray-400 uppercase font-black tracking-widest leading-tight">In-house<br>Production</span>
-              </div>
-              <div class="flex items-center gap-3 text-white">
-                <i data-lucide="truck" class="w-8 h-8 md:w-10 md:h-10 text-brand-yellow"></i>
-                <span class="text-[10px] md:text-xs text-gray-400 uppercase font-black tracking-widest leading-tight">Fleet<br>Specialists</span>
-              </div>
-              <div class="flex items-center gap-3 text-white">
-                <i data-lucide="zap" class="w-8 h-8 md:w-10 md:h-10 text-brand-yellow"></i>
-                <span class="text-[10px] md:text-xs text-gray-400 uppercase font-black tracking-widest leading-tight">Fast<br>Turnaround</span>
-              </div>
-            </div>
-          </div>
+        <div class="flex items-center gap-3 text-white">
+          <i data-lucide="shield-check" class="w-8 h-8 md:w-10 md:h-10 text-brand-yellow"></i>
+          <span class="text-[10px] md:text-xs text-gray-400 uppercase font-black tracking-widest leading-tight">In-house<br>Production</span>
         </div>
-      </section>
+        <div class="flex items-center gap-3 text-white">
+          <i data-lucide="truck" class="w-8 h-8 md:w-10 md:h-10 text-brand-yellow"></i>
+          <span class="text-[10px] md:text-xs text-gray-400 uppercase font-black tracking-widest leading-tight">Fleet<br>Specialists</span>
+        </div>
+        <div class="flex items-center gap-3 text-white">
+          <i data-lucide="zap" class="w-8 h-8 md:w-10 md:h-10 text-brand-yellow"></i>
+          <span class="text-[10px] md:text-xs text-gray-400 uppercase font-black tracking-widest leading-tight">Fast<br>Turnaround</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 
       <!-- Services Preview -->
       <section class="py-20 md:py-24 bg-white">
